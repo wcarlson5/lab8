@@ -42,4 +42,15 @@ function initGestures() {
 // init RSVP form submit listener
 function initRSVPForm() {
   // add your code here
+  $('#rsvpForm').submit(function(e){
+  		e.preventDefault();
+  		console.log("sub");
+  		var rE = $('#rsvpEmail').val();
+  		$.post('addRSVP',{rsvpEmail: rE}, postCallback);
+  });
+
+  function postCallback(){
+  	alert("RSVP form submitted");
+  	$('#rsvpForm').val('');
+  }
 }

@@ -40,6 +40,8 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/rsvp', rsvp.adminView);
 
+app.post('/addRSVP', rsvp.addRSVP);
+
 // Example route
 // app.get('/users', user.list);
 
